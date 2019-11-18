@@ -11,12 +11,14 @@ import Weather from './components/Weather'
 //   timeout: 3000
 // });
 
+//https://home.openweathermap.org/
 const API_KEY = "5088cd97d07ca3f530bfeee7f7f08acc"
 
 
 export default class App extends Component {
 
   state = {
+    visible: false,
     temperature: undefined,
     city: undefined,
     country: undefined,
@@ -41,6 +43,7 @@ export default class App extends Component {
     if (city && country) {
       console.log(data);
       this.setState({
+        visible: true,
         temperature: data.main.temp,
         city: data.name,
         country: data.sys.country,
@@ -52,6 +55,7 @@ export default class App extends Component {
       //ERROR CATCH
     } else {
       this.setState({
+        visible: false,
         temperature: undefined,
         city: undefined,
         country: undefined,
@@ -66,18 +70,36 @@ export default class App extends Component {
   render() {
     return (
       <div>
-        <Titles />
-        <Form getWeather={this.getWeather} />
-        <Weather
-          temperature={this.state.temperature}
-          city={this.state.city}
-          country={this.state.country}
-          humidity={this.state.humidity}
-          description={this.state.description}
-          error={this.state.error}
+        <div className="wrapper">
+          <div className="main">
+            <div className="container">
+              <div className="row">
+                <div className="col-5 title">
+                  <Titles />
+                </div>
+                <div className="col-5 weather-form">
+                  <Form getWeather={this.getWeather}
+                    onClick={() => {
+                      this.setState({ visible: true })
+                    }} />
 
-        />
+                  {this.state.visible ? <Weather
+                    temperature={this.state.temperature}
+                    city={this.state.city}
+                    country={this.state.country}
+                    humidity={this.state.humidity}
+                    description={this.state.description}
+                    error={this.state.error}
+                  /> : <div> Enter City & State</div>}
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     )
   }
 }
+
+
+

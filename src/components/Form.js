@@ -1,11 +1,17 @@
-import React, { Component } from 'react'
+import React from 'react'
 
 const Form = props => (
-  <form onSubmit={props.getWeather}>
-    <input type="text" name="city" placeholder="City.." />
-    <input type="text" name="country" placeholder="Country.." />
-    <button type="submit"> Get Weather</button>
-  </form>
+  <div >
+    <form className="input-group mb-3" onSubmit={props.getWeather} >
+      <span>
+      </span>
+      <input className="form-control" type="text" name="city" placeholder="City.." />
+      <input className="form-control" type="text" name="country" placeholder="Country.." />
+      <div className="input-group-append">
+        <button className="btn btn-success" type="submit" id="button-addon2"> Get Weather</button>
+      </div>
+    </form>
+  </div>
 )
 
 
