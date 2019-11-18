@@ -10,6 +10,8 @@ export default class Weather extends Component {
         }
         {this.props.description && <p>Conditions: {this.props.description}</p>
         }
+        {/* ERROR CATCH */}
+        {this.props.error && <p>{this.props.error}</p>}
       </div>
     )
   }
