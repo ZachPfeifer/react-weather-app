@@ -16,10 +16,18 @@ const API_KEY = "5088cd97d07ca3f530bfeee7f7f08acc"
 
 export default class App extends Component {
 
+  state = {
+    temperature: undefined,
+    city: undefined,
+    country: undefined,
+    humidity: undefined,
+    description: undefined,
+    error: undefined
+  }
 
 
 
-
+  //API Fetch/Call
   getWeather = async (e) => {
     e.preventDefault();
 
@@ -32,6 +40,15 @@ export default class App extends Component {
     const data = await api_call.json();
     console.log(data);
 
+    this.setState({
+      temperature: data.main.temp,
+      city: data.name,
+      country: data.sys.country,
+      humidity: data.main.humidity,
+      description: data.weather[0].description,
+      error: ""
+    })
+
   }
 
 
@@ -40,7 +57,15 @@ export default class App extends Component {
       <div>
         <Titles />
         <Form getWeather={this.getWeather} />
-        <Weather />
+        <Weather
+          temperature={this.state.temperature}
+          city={this.state.city}
+          country={this.state.country}
+          humidity={this.state.humidity}
+          description={this.state.description}
+          error={this.state.error}
+
+        />
       </div>
     )
   }
