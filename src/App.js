@@ -90,7 +90,7 @@ export default class App extends Component {
                     humidity={this.state.humidity}
                     description={this.state.description}
                     error={this.state.error}
-                  /> : <div> Enter City & State</div>}
+                  /> : <div> Enter City & Country</div>}
                 </div>
               </div>
             </div>
