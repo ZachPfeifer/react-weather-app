@@ -1,7 +1,7 @@
 import React from 'react'
 
 const Weather = props => (
-  <div className="card">
+  <div className="card rounded">
     <div className="card-header">
       Details
    </div>
@@ -10,7 +10,7 @@ const Weather = props => (
       <li className="list-group-item">{props.temperature && <p>Temperature: {props.temperature} °F</p>}</li>
       <li className="list-group-item">{props.humidity && <p>Humidity: {props.humidity}</p>
       }</li>
-      <li className="list-group-item">{props.description && <p>Conditions: {props.description}</p>
+      <li className="list-group-item ">{props.description && <p>Conditions: <a className="text-uppercase"> {props.description}</a></p>
       }</li>
     </ul>
 
