@@ -88,6 +88,21 @@ font-size: 50px;
   line-height: 1.5;
 }
 
+.list-group-flush .list-group-item {
+    border-right: 0;
+    border-left: 0;
+    border-radius: 0;
+    background-color: #d2fafb;
+}
+
+.card-header {
+    padding: .75rem 1.25rem;
+    margin-bottom: 0;
+    background-color: rgba(0,0,0,.03);
+    border-bottom: 1px solid rgba(0,0,0,.125);
+    background-color:beige;
+}
+
 input[type="text"] {
   background-color: transparent;
   border: 0;

@@ -3,12 +3,12 @@ import React from 'react'
 const Weather = props => (
   <div className="card rounded">
     <div className="card-header">
-      Details
+      Current Weather:
    </div>
     <ul className="list-group list-group-flush">
       <li className="list-group-item"> {props.city && props && <p> Location: {props.city},  {props.country}</p>}</li>
       <li className="list-group-item">{props.temperature && <p>Temperature: {props.temperature} °F</p>}</li>
-      <li className="list-group-item">{props.humidity && <p>Humidity: {props.humidity}</p>
+      <li className="list-group-item">{props.humidity && <p>Humidity: {props.humidity} %</p>
       }</li>
       <li className="list-group-item ">{props.description && <p>Conditions: <a className="text-uppercase"> {props.description}</a></p>
       }</li>

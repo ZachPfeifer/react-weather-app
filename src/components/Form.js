@@ -5,10 +5,10 @@ const Form = props => (
     <form className="input-group mb-3" onSubmit={props.getWeather} >
       <span>
       </span>
-      <input className="form-control" type="text" name="city" placeholder="City.." />
-      <input className="form-control" type="text" name="country" placeholder="Country.." />
+      <input className="form-control rounded" type="text" name="city" placeholder="City.." />
+      <input className="form-control rounded" type="text" name="country" placeholder="Country.." />
       <div className="input-group-append">
-        <button className="btn btn-outline-secondary btn-light" type="submit" id="button-addon2"> Get Weather</button>
+        <button className="btn btn-outline-secondary btn-light rounded" type="submit" id="button-addon2"> Get Weather</button>
       </div>
     </form>
   </div>
